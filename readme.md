@@ -108,3 +108,59 @@ Example 1:
 Input: s = "RLRRLLRLRL"
 Output: 4
 Explanation: s can be split into "RL", "RRLL", "RL", "RL", each substring contains same number of 'L' and 'R'.
+
+12. [Eady] 1592 Rearrange Spaces Between Words
+    You are given a string text of words that are placed among some number of spaces. Each word consists of one or more lowercase English letters and are separated by at least one space. It's guaranteed that text contains at least one word.
+
+Rearrange the spaces so that there is an equal number of spaces between every pair of adjacent words and that number is maximized. If you cannot redistribute all the spaces equally, place the extra spaces at the end, meaning the returned string should be the same length as text.
+
+Return the string after rearranging the spaces.
+
+Example 1:
+
+Input: text = " this is a sentence "
+Output: "this is a sentence"
+Explanation: There are a total of 9 spaces and 4 words. We can evenly divide the 9 spaces between the words: 9 / (4-1) = 3 spaces.
+
+Example 2:
+
+Input: text = " practice makes perfect"
+Output: "practice makes perfect "
+Explanation: There are a total of 7 spaces and 3 words. 7 / (3-1) = 3 spaces plus 1 extra space. We place this extra space at the end of the string.
+
+13. Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+
+Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+Example 1:
+
+Input: nums = [2,5,1,3,4,7], n = 3
+Output: [2,3,5,4,1,7]
+Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
+Example 2:
+
+Input: nums = [1,2,3,4,4,3,2,1], n = 4
+Output: [1,4,2,3,3,2,4,1]
+
+14. 1281. Subtract the Product and Sum of Digits of an Integer
+          Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+
+Example 1:
+
+Input: n = 234
+Output: 15
+Explanation:
+Product of digits = 2 _ 3 _ 4 = 24
+Sum of digits = 2 + 3 + 4 = 9
+Result = 24 - 9 = 15
+
+15. 1684. Count the Number of Consistent Strings
+          You are given a string allowed consisting of distinct characters and an array of strings words. A string is consistent if all characters in the string appear in the string allowed.
+
+Return the number of consistent strings in the array words.
+
+Example 1:
+
+Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+Output: 2
+Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.

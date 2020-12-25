@@ -59,6 +59,10 @@ function palindrome(str) {
 
 console.log(palindrome ('malayalam'));
 
+// Second version:
+const isPalindrome = (x) => {
+  return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
+
 // 5. 
 var arrayStringsAreEqual = function(word1, word2) {
   str1 = '';
@@ -196,3 +200,69 @@ var balancedStringSplit = function(s) {
 // ret = 1;
 
 // 12.
+var reorderSpaces = function(text) {
+  let totalSpaces = text.length - text.replace(/[ ]/gi, "").length;
+  let wordsArr = text.split(" ").filter((word) => word !== "");
+  if (wordsArr.length === 1) {
+    return wordsArr[0] + " ".repeat(totalSpaces);
+  }
+  let remainingSpaces = totalSpaces % (wordsArr.length - 1);
+  let equalSpaces = Math.floor(totalSpaces / (wordsArr.length - 1));
+  let spacecBetween = " ".repeat(equalSpaces);
+  let lastSpaces = " ".repeat(remainingSpaces);
+
+  return wordsArr.join(spacecBetween) + lastSpaces;
+};
+
+// 13.
+var shuffle = function(nums, n) {
+  let result = [];
+  for(let i = 0; i < n; i++){
+      result.push(nums[i]);
+      result.push(nums[i+n]);   
+  }
+  return result;
+};
+
+// 14. v1
+let subtractProductAndSum = function(n) {
+  n = n + '';
+  let s = 0;
+  let p = 1;
+  for (let i = 0; i < n.length; i++){
+      p *= +n[i];
+      s += +n[i];
+  }
+  return p-s;
+};
+
+// 14. v2
+let subtractProductAndSum = function(n) {
+  let digits = n.split('');
+  let prod = digits.reduce((a, b) => a * parseInt(b), 1);
+  let sum = digits.reduce((a, b) => a + parseInt(b), 0);
+  return prod - sum;
+};
+
+subtractProductAndSum('456');
+
+// 15. 
+let countConsistentStrings = function(allowed, words) {
+  let count = 0;
+  for (let word of words){
+       let includes = false;
+      for (let c of word){
+         if (!allowed.includes(c)){
+             includes = false;
+             break;
+         } else {
+             includes = true;
+         }
+      }  
+      if (includes) {
+          count ++      
+      }
+  }
+  
+  return count;
+};
